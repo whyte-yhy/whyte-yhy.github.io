@@ -27,3 +27,6 @@ class Solution {
     }
 }
 '''
+
+
+Arrays.copyOfRange(array[], from, to);   // 比如数组是  5, 4, 3, _, _.   处理后为 5, 4, 3.
