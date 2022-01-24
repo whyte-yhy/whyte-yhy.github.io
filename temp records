@@ -30,3 +30,28 @@ class Solution {
 
 
 Arrays.copyOfRange(array[], from, to);   // 比如数组是  5, 4, 3, _, _.   处理后为 5, 4, 3.
+Arrays.asList(nums[i], nums[left], nums[right];   // 转为list
+
+小写字母 => 数组代替哈希表
+
+
+public boolean canConstruct(String ransomNote, String magazine) {
+    //记录杂志字符串出现的次数
+    int[] arr = new int[26];    // 数组比map更快
+    int temp;
+    for (int i = 0; i < magazine.length(); i++) {
+        temp = magazine.charAt(i) - 'a';     // 根据数据状况把需要map处理的数据用数组记录
+        arr[temp]++;
+    }
+    for (int i = 0; i < ransomNote.length(); i++) {
+        temp = ransomNote.charAt(i) - 'a';
+        //对于金信中的每一个字符都在数组中查找
+        //找到相应位减一，否则找不到返回false
+        if (arr[temp] > 0) {
+            arr[temp]--;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
